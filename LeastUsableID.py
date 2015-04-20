@@ -11,8 +11,8 @@ def partition (A, l, u, v):
     v: the value to split the array
     return: -1 when has error otherwise the index of the split point
     '''
-    if l > u:
-        return -1
+    if l > u or l < 0 or u < 0:
+    	raise Exception("partition: l and u should be greater than 0 and u >= l") 
 
     while True:
         while (A[l] <= v):
@@ -42,6 +42,9 @@ def recursiveFindMinID(A, l, u):
     '''
     m = int((l+u)/2)
 
+    if l > u:
+        return l
+
     i = partition(A, l, u, m)
 
     if i - l + 1 <= 0:
@@ -57,4 +60,4 @@ def findMinID(A):
 
 
 if __name__ == "__main__":
-    print(findMinID([2,1,0,3]))
+    print(findMinID([0, 10 ,3]))
