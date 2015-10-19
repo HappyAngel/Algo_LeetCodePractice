@@ -38,7 +38,7 @@ struct TreeNode {
 */
 class Solution {
 public:
-	int minDepth(TreeNode* root) {
+	int GetCompleteBinaryTreeCount(TreeNode* root) {
 		// breath first traverse
 		if (root == NULL)
 		{
@@ -111,7 +111,7 @@ int main()
 
 	Solution s;
 
-	int c = s.minDepth(&root);
+	int c = s.GetCompleteBinaryTreeCount(&root);
 
 	cout << c << endl;
 
